@@ -1,0 +1,50 @@
+<!--pages/user/home/home.wxml-->
+<!--<text>pages/user/home/home.wxml</text>-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">杭州亚运会</view>
+</cu-custom>
+
+<scroll-view scroll-y class="">
+  <!--头部-->
+  <!--已登录-->
+  <view wx:if="{{islogin==true}}">
+    <view class="ave">
+      <image class="cu-avatar xl round" src="{{myavatar}}"></image>
+    </view>
+    <view style="display: flex;justify-content: center;padding-bottom: 15rpx;" bindtap="exit">退出登录</view>
+  </view>
+  <!--未登录-->
+  <view wx:else>
+    <view class="ave">
+      <image class="cu-avatar xl round" src="{{nologin}}"></image>
+    </view>
+    <view style="display: flex;justify-content: center;padding-bottom: 15rpx;" bindtap="login">授权登录</view>
+  </view>
+
+  <!--信息-->
+  <!--1 直接获取-->
+  <view class="margin-top">
+    <view class="cu-form-group">
+      <view class="title">昵称</view>
+      <view class="action">{{name}}</view>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">ID</view>
+      <view class="action" wx:if="{{openid}}">*************</view>
+    </view>
+  </view>
+
+  <!--2 可以修改-->
+  <view class="margin-top">
+    <view class="cu-form-group" wx:for="{{info001}}">
+      <view class="title">{{item.title}}</view>
+      <view class="action">
+        <view class="action">
+          <navigator class="text-gray" open-type="navigate" hover-class="none" url="/pages/user/{{item.page}}/{{item.page}}?openid={{openid}}&name={{name}}"><text class="cuIcon-right"></text></navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

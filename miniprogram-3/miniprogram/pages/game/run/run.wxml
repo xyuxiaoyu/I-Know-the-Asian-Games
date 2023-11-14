@@ -1,0 +1,18 @@
+<!--pages/game/run/run.wxml-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">比赛分类</view>
+</cu-custom>
+
+<scroll-view>
+  <view class="items">
+    <block wx:for="{{gameList}}" wx:key>
+      <view class="item" bindtap="toinfo" data-_id="{{item._id}}">
+        <image class="imgbox" src="{{item.url}}" mode="aspectFill"></image>
+        <view>{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+

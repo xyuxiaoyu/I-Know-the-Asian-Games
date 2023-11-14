@@ -1,0 +1,42 @@
+<!--pages/user/form/form.wxml-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">我的报名表</view>
+</cu-custom>
+
+<scroll-view style="height: auto" scroll-y="true" scroll-with-animation="true">
+  <view class="cu-card article card">
+    <view class="cu-item"  bindtap="showModal" data-target="Modal" wx:for="{{list}}"  wx:key data-index="{{index}}">
+      <view class="title">
+        <view class="text-cut">{{item.style}}志愿者</view>
+      </view>
+      <view class="box">
+        <view class="text-content text-gray">姓名：{{item.name}}</view>
+        <view class="text-content text-gray">志愿类型：{{item.volunteer}}</view>
+        
+      </view>
+    </view>
+  </view>
+
+  <!--modal-->
+  <view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">{{modal.style}}志愿者</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="info">
+      姓名：{{modal.name}}<text decode="{{true}}" wx:for="{{6}}">&ensp;</text>性别：{{modal.sex}}
+    </view>
+    <view class="info">身份证类型：{{modal.id}}</view>
+    <view class="info">身份证号：{{modal.idnum}}</view>
+    <view class="info">电话号码：{{modal.phone}}</view>
+    <view class="info">地址：{{modal.region}}<view style="padding-left: 85rpx;padding-top: 10rpx;">{{modal.add}}</view>
+    </view>
+    <view class="info">志愿类型：{{modal.volunteer}}</view>
+  </view>
+</view>
+</scroll-view>

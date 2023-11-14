@@ -1,0 +1,22 @@
+/* pages/activity/history/history.wxss */
+.fontstyle{
+  font-size: 50rpx;
+  font-weight: bolder;
+  color: rgb(88, 88, 88);
+}
+
+.but{
+  font-size: small;
+  font-weight: normal;
+}
+
+.name{
+  font-size: 30rpx;
+  font-weight: bold;
+  color:purple
+}
+
+.pic{
+  border-radius: 15rpx;
+  overflow: hidden;
+}

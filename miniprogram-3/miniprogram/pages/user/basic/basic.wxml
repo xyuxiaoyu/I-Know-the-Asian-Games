@@ -1,0 +1,19 @@
+<!--pages/user/basic/basic.wxml-->
+<!--<text>pages/user/basic/basic.wxml</text>-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">基本信息</view>
+</cu-custom>
+
+<view class="margin-top">
+  <view class="cu-form-group"  wx:for="{{info}}" wx:key>
+    <view class="title">{{item.title}}</view>
+    <view class="action">{{item.info}}</view>
+  </view>
+</view>
+
+<!--按钮-->
+<view class="cu-bar btn-group margin-top">
+  <button class="cu-btn bg-green shadow-blur round lg" bindtap="changeInfo">修改</button>
+</view>

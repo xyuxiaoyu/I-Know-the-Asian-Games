@@ -1,0 +1,36 @@
+<!--pages/game/gym/gym.wxml-->
+
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">比赛场所</view>
+</cu-custom>
+
+<!--搜索-->
+<view class="cu-bar search bg-white">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search" value="{{searchInput}}" bindblur="inputText"></input>
+  </view>
+  <view class="action but">
+    <button class="cu-btn bg-green shadow-blur round" bindtap="searchBut">搜索</button>
+  </view>
+</view>
+
+<!--卡片-->
+<scroll-view style="height: 1350rpx" scroll-y="true" scroll-with-animation="true">
+  <view class="cu-card article card">
+    <view class="cu-item"  bindtap="toInfo" wx:for="{{searchlist}}"  wx:key  data-_id="{{item._id}}">
+      <view class="title">
+        <view class="text-cut">{{item.title}}</view>
+      </view>
+      <view class="content">
+        <image src="{{item.url}}" mode="aspectFill"></image>
+        <view class="desc">
+          <view class="text-content info"> {{item.info}}</view>
+          <view class="text-gray ">{{item.time}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

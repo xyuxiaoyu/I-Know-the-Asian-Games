@@ -1,0 +1,44 @@
+<!--pages/activity/history/history.wxml-->
+<!--<text>pages/activity/history/history.wxml</text>-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">历届亚运</view>
+</cu-custom>
+
+<!--分类导航-->
+<view class="cu-bar bg-white solid-bottom">
+  <view class="">
+    <button class="but" bindtap="scrollStepsback">上一届</button>
+  </view>
+  <view class="action">
+    <button class="but" bindtap="scrollStepsgo">下一届</button>
+  </view>
+</view>
+
+<scroll-view scroll-x class="bg-white padding response cu-steps steps-bottom" scroll-into-view="scroll-{{scroll}}" scroll-with-animation>
+  <view class="cu-item {{index>scroll?'':'text-mauve'}} padding-lr-xl" wx:for="{{list}}" wx:key id="scroll-{{index}}">
+   第 {{18 - index}} 届<text class="num" data-index="{{18 - index}}"></text>
+  </view>
+</scroll-view>
+
+<scroll-view style="height: 1200rpx" scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true">
+  <view class="cu-timeline" >
+    <view class="cu-item text-blue" wx:for="{{list}}">
+        <view id="{{item.hash}}" class="fontstyle">{{item.time}}</view>
+        <view class="bg-gray content name">{{item.name}}</view>
+        <view class="bg-gray content">{{item.info}}</view>
+        <image class="pic" src="{{item.url}}" mode="aspectFit"></image>
+    </view>
+  </view>
+</scroll-view>
+
+
+
+
+
+
+
+
+
+

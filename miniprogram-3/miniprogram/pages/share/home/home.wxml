@@ -1,0 +1,45 @@
+<!--pages/share/home/home.wxml-->
+<!--<text>pages/share/home/home.wxml</text>-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">杭州亚运会</view>
+</cu-custom>
+
+<view class="cu-bar bg-white">
+  <view class="action text-bold text-purple">分享趣事 迎接亚运</view>
+  <view class="action but">
+    <button class="cu-btn bg-green shadow" bindtap="shareNew" data-target="Modal">发布+</button>
+  </view>
+</view>
+
+<scroll-view style="height: 1210rpx" scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true">
+<!--瀑布流-->
+  <view class="content">
+    <view class="left">
+      <block wx:for="{{list}}" wx:key="index">
+        <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
+      </block>
+    </view>
+    <view class="right">
+      <block wx:for="{{list}}" wx:key="index">
+        <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+      </block>
+    </view>
+  </view>
+
+  <template name="item">
+    <view class="item">
+      <image class="item-img" src="{{url}}" mode="widthFix"></image>
+      <view class="item-title-box">
+        <view class="item-title">{{title}}</view>
+      </view>
+      <view class="heart">
+        <text class="cuIcon-like icon" bindtap="praiseThis" wx:if="{{love==false}}" data-iflike="{{true}}" data-_id="{{_id}}" data-id="{{id}}"></text>
+        <text class="cuIcon-likefill icon text-red" bindtap="praiseThis" wx:else data-iflike="{{false}}" data-_id="{{_id}}" data-id="{{id}}"></text>
+        <text>{{num}}</text>
+      </view>
+    </view>
+  </template>
+</scroll-view>
+

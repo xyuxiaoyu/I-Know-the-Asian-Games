@@ -1,0 +1,68 @@
+<!--pages/activity/subpage001/subpage001.wxml-->
+<!--<text>pages/activity/subpage001/subpage001.wxml</text>-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">赛会志愿者</view>
+</cu-custom>
+
+<!--表单-->
+<view class="cu-form-group margin-top">
+	<view class="title">联系人姓名*</view>
+	<input bindblur="nameInput" placeholder="输入姓名"></input>
+	<view class="cu-capsule radius">
+	</view>
+</view>
+<view class="cu-form-group">
+	<view class="title">性别*</view>
+	<picker bindchange="GenderChange" mode = "selector" value="{{index001}}" range="{{gender}}">
+		<view class="picker">{{index001?gender[index001]:'未填写'}}
+		</view>
+	</picker>
+</view>
+<view class="cu-form-group">
+	<view class="title">证件类型*</view>
+	<picker bindchange="IDChange" mode = "selector" value="{{index002}}" range="{{identity}}">
+		<view class="picker">{{index002?identity[index002]:'未填写'}}
+		</view>
+	</picker>
+</view>
+<view class="cu-form-group">
+	<view class="title">证件号码*</view>
+	<input bindblur="idInput" placeholder="输入证件号码"></input>
+	<view class="cu-capsule radius">
+	</view>
+</view>
+<view class="cu-form-group">
+	<view class="title">手机号*</view>
+	<input bindblur="phoneInput" placeholder="输入手机号"></input>
+	<view class="cu-capsule radius">
+	</view>
+</view>
+<view class="cu-form-group">
+	<view class="title">现居住地*</view>
+	<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+		<view class="picker">
+			{{region[0]}}/{{region[1]}}/{{region[2]}}
+		</view>
+	</picker>
+</view>
+<view class="cu-form-group align-start">
+	<view class="title">详细地址*</view>
+	<textarea maxlength="-1" disabled="{{modalName!=null}}" bindblur="addInput" placeholder="多行文本输入框"></textarea>
+	<view class="cu-capsule radius">
+	</view>
+</view>
+<view class="cu-form-group">
+	<view class="title">请选择想加入的志愿者类型*</view>
+	<picker bindchange="StyleChange" mode = "selector" value="{{index003}}" range="{{style}}">
+		<view class="picker">{{index003?style[index003]:'未填写'}}
+		</view>
+	</picker>
+</view>
+
+
+<!--按钮-->
+<view class="cu-bar btn-group margin-top">
+  <button class="cu-btn bg-green shadow-blur round lg" bindtap="gameVol">报名</button>
+</view>

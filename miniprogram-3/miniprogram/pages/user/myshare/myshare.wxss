@@ -1,0 +1,54 @@
+/* pages/user/myshare/myshare.wxss */
+.items{
+    display: flex;
+    flex-wrap: wrap;
+}
+.item{
+    width: 46%;
+    margin-top: 10rpx;
+    margin-right: 2%;
+    margin-left: 1%;
+    /*text-align:center;*/
+    float: left;
+}
+.item:nth-child(n+1){
+    margin-left: 2%;
+}
+.imgbox{
+    height: 250rpx;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+}
+.itembox{
+    border-radius: 20rpx;
+    background-color: white;
+}
+.title{
+    margin-top: 5rpx;
+    margin-bottom: 10rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    padding-bottom: 10rpx;
+    font-size: 24rpx;
+    /*text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;*/
+    /*font-family: 'PingFang SC-Medium';*/
+}
+
+.modaltitle{
+    font-size: large;
+    font-weight: normal;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    text-align:left;
+}
+
+.like{
+    font-size: 40rpx;
+    right: 0;
+    padding-left: 530rpx;
+    margin-bottom: 20rpx;
+}

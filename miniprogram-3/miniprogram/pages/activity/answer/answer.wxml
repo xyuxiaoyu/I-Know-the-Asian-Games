@@ -1,0 +1,30 @@
+<!--pages/activity/answer/answer.wxml-->
+<!--<text>pages/activity/answer/answer.wxml</text>-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">问题答疑</view>
+</cu-custom>
+
+<!--搜索-->
+<view class="cu-bar search bg-white">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search" value="{{searchInput}}" bindblur="inputText"></input>
+  </view>
+  <view class="action but">
+    <button class="cu-btn bg-green shadow-blur round" bindtap="searchBut">搜索</button>
+  </view>
+</view>
+
+<!--卡片-->
+<view class="margin-top">
+    <view class="cu-form-group" style="margin-bottom: 10rpx;" wx:for="{{searchlist}}">
+      <view class="title info">{{item.title}}</view>
+      <view class="action">
+        <view class="action">
+          <view class="text-gray" bindtap="toInfo" data-id="{{item.id}}"><text class="cuIcon-right"></text></view>
+        </view>
+      </view>
+    </view>
+</view>

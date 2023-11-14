@@ -1,0 +1,163 @@
+<!--pages/basics/home/home.wxml-->
+<!--<text>pages/basics/home/home.wxml</text>-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">杭州亚运会</view>
+</cu-custom>
+
+<!--首页视频-->
+<view class="banner">
+<video id="myVideo" src="{{videourl}}" style="width:100%;height:350rpx;" autoplay='{{true}}' loop='{{true}}' object-fit="cover" show-progress='{{false}}' controls='{{false}}' bindended='endAction'></video>
+</view>
+<!--分类导航-->
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{navList}}" wx:key bindtap="toViewClick" data-hash="{{item.hash}}" data-id="{{item.id}}">
+    {{item.title}}
+  </view>
+</scroll-view>
+
+<!--主体-->
+<scroll-view style="height: 865rpx" scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true">
+
+<!--1-->
+  <view id="Box001" class="list">
+    <view class="wrapper">
+      <view class="cu-bar solids-bottom">
+        <view class="text-bold action"><text class="cuIcon-title text-orange "></text>亚运动态</view>
+        <view class="action">
+          <navigator class="text-gray" open-type="navigate" hover-class='none' url="/pages/basics/box/box001/box001?dbcollection=basicBox001" >更多<text class='cuIcon-right'></text></navigator>
+        </view>
+      </view>
+      <!--内容-->
+      <view class="cu-card article no-card">
+        <view class="cu-item" wx:for="{{Box001List}}"  wx:key>
+          <view bindtap="toInfo" data-_id="{{item._id}}" data-collection="basicBox001">
+           <!--内容-->
+            <view class="title text-cut">{{item.title}}</view>
+            <view class="content">
+              <image src="{{item.url}}" mode="aspectFill"></image>
+              <view class="desc">
+                <view class="text-content info"> {{item.info}}</view>
+                <view class="text-gray ">{{item.time}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--2-->
+  <view id="Box002" class="list">
+    <view class="wrapper">
+      <view class="cu-bar solids-bottom">
+        <view class="text-bold action"><text class="cuIcon-title text-orange "></text>全球赛事</view>
+        <view class="action">
+          <navigator class="text-gray" open-type="navigate" hover-class='none' url="/pages/basics/box/box001/box001?dbcollection=basicBox002" >更多<text class='cuIcon-right'></text></navigator>
+        </view>
+      </view>
+      <!--内容-->
+      <view class="cu-card article no-card">
+        <view class="cu-item" wx:for="{{Box002List}}"  wx:key>
+          <view bindtap="toInfo" data-_id="{{item._id}}" data-collection="basicBox002">
+           <!--内容-->
+            <view class="title text-cut">{{item.title}}</view>
+            <view class="content">
+              <image src="{{item.url}}" mode="aspectFill"></image>
+              <view class="desc">
+                <view class="text-content info"> {{item.info}}</view>
+                <view class="text-gray ">{{item.time}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!--3-->
+  <view id="Box003" class="list">
+    <view class="wrapper">
+      <view class="cu-bar solids-bottom">
+        <view class="text-bold action"><text class="cuIcon-title text-orange "></text>专题报道</view>
+        <view class="action">
+          <navigator class="text-gray" open-type="navigate" hover-class='none' url="/pages/basics/box/box001/box001?dbcollection=basicBox003" >更多<text class='cuIcon-right'></text></navigator>
+        </view>
+      </view>
+      <!--内容-->
+      <view class="cu-card article no-card">
+        <view class="cu-item" wx:for="{{Box003List}}"  wx:key>
+          <view bindtap="toInfo" data-_id="{{item._id}}" data-collection="basicBox003">
+           <!--内容-->
+            <view class="title text-cut">{{item.title}}</view>
+            <view class="content">
+              <image src="{{item.url}}" mode="aspectFill"></image>
+              <view class="desc">
+                <view class="text-content info"> {{item.info}}</view>
+                <view class="text-gray ">{{item.time}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--4-->
+  <view id="Box004" class="list">
+    <view class="wrapper">
+      <view class="cu-bar solids-bottom">
+        <view class="text-bold action"><text class="cuIcon-title text-orange "></text>亚运文化</view>
+        <view class="action">
+          <navigator class="text-gray" open-type="navigate" hover-class='none' url="/pages/basics/box/box001/box001?dbcollection=basicBox004" >更多<text class='cuIcon-right'></text></navigator>
+        </view>
+      </view>
+      <!--内容-->
+      <view class="cu-card article no-card">
+        <view class="cu-item" wx:for="{{Box004List}}"  wx:key>
+          <view bindtap="toInfo" data-_id="{{item._id}}" data-collection="basicBox004">
+           <!--内容-->
+            <view class="title text-cut">{{item.title}}</view>
+            <view class="content">
+              <image src="{{item.url}}" mode="aspectFill"></image>
+              <view class="desc">
+                <view class="text-content info"> {{item.info}}</view>
+                <view class="text-gray ">{{item.time}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--5-->
+  <view id="Box005" class="list">
+    <view class="wrapper">
+      <view class="cu-bar solids-bottom">
+        <view class="text-bold action"><text class="cuIcon-title text-orange "></text>举办城市</view>
+        <view class="action">
+          <navigator class="text-gray" open-type="navigate" hover-class='none' url="/pages/basics/box/box001/box001?dbcollection=basicBox005" >更多<text class='cuIcon-right'></text></navigator>
+        </view>
+      </view>
+      <!--内容-->
+      <view class="cu-card article no-card">
+        <view class="cu-item" wx:for="{{Box005List}}"  wx:key>
+          <view bindtap="toInfo" data-_id="{{item._id}}" data-collection="basicBox005">
+           <!--内容-->
+            <view class="title text-cut">{{item.title}}</view>
+            <view class="content">
+              <image src="{{item.url}}" mode="aspectFill"></image>
+              <view class="desc">
+                <view class="text-content info"> {{item.info}}</view>
+                <view class="text-gray ">{{item.time}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+

@@ -1,0 +1,9 @@
+/* pages/activity/home/home.wxss */
+.box01{
+  margin-top: 10rpx;
+  margin-left: 42rpx;
+  margin-right: 72rpx;
+}
+.nav{
+  width: 100%;
+}

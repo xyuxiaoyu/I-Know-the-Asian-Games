@@ -1,0 +1,79 @@
+<!--pages/game/home/home.wxml-->
+<!--<text>pages/game/home/home.wxml</text>-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">杭州亚运会</view>
+</cu-custom>
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="cu-bar">
+    <view class="text-bold action">比赛分类</view>
+  </view>
+</view>
+
+
+<!--分类-->
+<view class="cu-list grid col-4 no-border">
+  <view class="cu-item" wx:for="{{gameList}}" wx:key wx:if="{{index<gridCol*2}}">
+    <navigator url="/pages/game/run/run?kind={{item.kind}}">
+      <image class="imgbox" src="/images/{{item.kind}}.png" mode="aspectFit"></image>
+      <text>{{item.name}}</text>
+    </navigator>
+  </view>
+</view>
+
+<!--主体-->
+<scroll-view style="height: 990rpx" scroll-y="true" scroll-with-animation="true">
+
+<!--1-->
+  <view id="Box001" class="list">
+    <view class="wrapper">
+      <view class="cu-bar solids-bottom">
+        <view class="text-bold action"><text class="cuIcon-title text-purple"></text>比赛场馆</view>
+        <view class="action">
+          <navigator class="text-gray" open-type="navigate" hover-class='none' url="/pages/game/gym/gym?dbcollection=gym" >更多<text class='cuIcon-right'></text></navigator>
+        </view>
+      </view>
+      <!--内容-->
+      <view class="cu-card article no-card">
+        <view class="cu-item" wx:for="{{Box001List}}"  wx:key bindtap="toInfo" data-_id="{{item._id}}" data-collection="gym">
+          <view class="title text-cut">{{item.title}}</view>
+          <view class="content">
+            <image src="{{item.url}}" mode="aspectFill"></image>
+            <view class="desc">
+              <view class="text-content info"> {{item.info}}</view>
+              <view class="text-gray ">{{item.time}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--2-->
+  <view id="Box002" class="list">
+    <view class="wrapper">
+      <view class="cu-bar solids-bottom">
+        <view class="text-bold action"><text class="cuIcon-title text-purple "></text>赛程速览</view>
+        <view class="action">
+          <navigator class="text-gray" open-type="navigate" hover-class='none' url="/pages/game/gym/gym?dbcollection=gym" >更多<text class='cuIcon-right'></text></navigator>
+        </view>
+      </view>
+      <!--内容-->
+      <view class="cu-card article no-card">
+        <view class="cu-item"  wx:for="{{Box002List}}"  wx:key  bindtap="toInfo" data-_id="{{item._id}}" data-collection="gym">
+          <view class="title text-cut">{{item.title}}</view>
+          <view class="content">
+            <image src="{{item.url}}" mode="aspectFill"></image>
+            <view class="desc">
+              <view class="text-content info"> {{item.info}}</view>
+              <view class="text-gray ">{{item.time}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+  

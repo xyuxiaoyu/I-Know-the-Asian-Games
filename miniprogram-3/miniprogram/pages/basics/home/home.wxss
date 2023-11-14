@@ -1,0 +1,18 @@
+/* pages/basics/home/home.wxss */
+.list{
+  background-color: white;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  border-radius: 20rpx;
+  /*overflow: hidden;*/
+}
+
+.info{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+

@@ -1,0 +1,14 @@
+<!--pages/activity/answer/info/info.wxml-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">问题答疑</view>
+</cu-custom>
+
+<view class="goods_detail" wx:for="{{info}}">
+  <!--标题和简介-->
+  <view class="box">
+    <view class="title">{{item.title}}</view>
+    <view class="info" wx:for="{{item.answer}}">{{item}}</view>
+  </view>
+</view>

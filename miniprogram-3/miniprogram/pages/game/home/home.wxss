@@ -1,0 +1,5 @@
+/* pages/game/home/home.wxss */
+.imgbox{
+    height: 70rpx;
+    
+}

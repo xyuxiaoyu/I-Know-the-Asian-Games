@@ -1,0 +1,43 @@
+<!--pages/activity/home/home.wxml-->
+<!--<text>pages/activity/home/home.wxml</text>-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">杭州亚运会</view>
+</cu-custom>
+
+<!--轮播图-->
+<swiper class="card-swiper DotStyle:'square-dot'" indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" ></image>
+    </view>
+  </swiper-item>
+</swiper>
+<!--分类栏1-->
+<view class="box01">
+  <navigator open-type="navigate" hover-class='none' url="/pages/activity/gamevolunteer/gamevolunteer" class="nav-li bg-yy1 nav">
+    <view class="nav-title">赛会志愿者报名</view>
+    <view class="nav-name">game-volunteer</view>
+    <text class='cuIcon-edit'></text>
+  </navigator>
+</view>
+<view class="box01">
+  <navigator open-type="navigate" hover-class='none' url="/pages/activity/cityvolunteer/cityvolunteer" class="nav-li bg-yy2 nav">
+    <view class="nav-title">城市志愿者报名</view>
+    <view class="nav-name">city-volunteer</view>
+    <text class='cuIcon-edit'></text>
+  </navigator>
+</view>
+
+<!--分类栏2-->
+<scroll-view scroll-y class="">
+  <view class='nav-list'>
+    <navigator open-type="navigate" hover-class='none' url="/pages/activity/{{item.page}}/{{item.page}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key>
+      <view class="nav-title">{{item.title}}</view>
+      <view class="nav-name">{{item.name}}</view>
+      <text class='cuIcon-{{item.icon}}'></text>
+    </navigator>
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>

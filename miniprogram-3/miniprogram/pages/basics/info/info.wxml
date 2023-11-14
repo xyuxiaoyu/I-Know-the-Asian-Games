@@ -1,0 +1,25 @@
+<!--pages/basics/info/info.wxml-->
+<!--<text>pages/basics/info/info.wxml</text>-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">详情</view>
+</cu-custom>
+
+<view class="goods_detail" wx:for="{{info}}">
+  <!--上边图片容器-->
+  <view class="url">
+    <image mode="aspectFill" style="width: 100%;" src="{{item.url}}">
+    </image>
+  </view>
+  <!--下侧标题和简介-->
+  <view class="box">
+    <view class="title">{{item.title}}</view>
+    <view class="info" wx:for="{{item.content}}">{{item}}</view>
+    <view class="time">{{item.time}}</view>
+    <view wx:if="{{item.urlcon}}">
+      <image class="urlcon" mode="aspectFit" style="width: 100%;" src="{{item.urlcon}}" bindtap="clickImg" data-img="{{item.urlcon}}"></image>
+    </view>
+
+  </view>
+</view>

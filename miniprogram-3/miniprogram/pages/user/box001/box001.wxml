@@ -1,0 +1,48 @@
+<!--pages/user/box001/box001.wxml-->
+<!--<text>pages/user/box001/box001.wxml</text>-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">基本信息</view>
+</cu-custom>
+
+<!--表单 保存-->
+<view class="cu-form-group margin-top">
+	<view class="title">性别</view>
+	<picker bindchange="GenderChange" mode = "selector" value="{{index001}}" range="{{gender}}">
+		<view class="picker">{{index001?gender[index001]:'保密'}}
+		</view>
+	</picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">出生日期</view>
+    <picker mode="date" value="{{date}}" start="1950-01-01" end="2023-12-31" bindchange="DateChange">
+      <view class="picker">{{date}}</view>
+    </picker>
+</view>
+<view class="cu-form-group">
+	<view class="title">所在城市</view>
+	<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+		<view class="picker">
+			{{region[0]}}/{{region[1]}}/{{region[2]}}
+		</view>
+	</picker>
+</view>
+<view class="cu-form-group">
+	<view class="title">联系方式</view>
+	<input bindblur ="phoneInput" placeholder="输入手机号"></input>
+	<view class="cu-capsule radius">
+	</view>
+</view>
+<view class="cu-form-group">
+	<view class="title">职业</view>
+	<picker bindchange="VocationChange" mode = "selector" value="{{index002}}" range="{{vocation}}">
+		<view class="picker">{{index002?vocation[index002]:'保密'}}
+		</view>
+	</picker>
+</view>
+
+<!--按钮-->
+<view class="cu-bar btn-group margin-top">
+  <button class="cu-btn bg-green shadow-blur round lg" bindtap="saveInfo">保存</button>
+</view>

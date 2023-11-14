@@ -1,0 +1,75 @@
+{
+  "pages": [
+    
+    "pages/basics/home/home",
+    "pages/basics/box/box001/box001",
+    "pages/basics/info/info",
+    "pages/activity/home/home",
+    "pages/activity/news/news",
+    "pages/activity/star/star",
+    "pages/activity/history/history",
+    "pages/activity/gamevolunteer/gamevolunteer",
+    "pages/activity/cityvolunteer/cityvolunteer",
+    "pages/activity/answer/answer",
+    "pages/activity/answer/info/info",
+    "pages/share/home/home",
+    "pages/share/new/new",
+    "pages/share/info/info",
+    "pages/game/home/home",
+    "pages/game/run/run",
+    "pages/game/info/info",
+    "pages/game/gym/gym",
+    "pages/user/home/home",
+    "pages/user/basic/basic",
+    "pages/user/box001/box001",
+    "pages/user/form/form",
+    "pages/user/myshare/myshare"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/basics/home/home",
+        "text":"首页",
+        "iconPath": "images/tabbar/basics.png",
+        "selectedIconPath": "images/tabbar/basics_select.png"
+      },
+      {
+        "pagePath": "pages/activity/home/home",
+        "text":"活动",
+        "iconPath": "images/tabbar/activity.png",
+        "selectedIconPath": "images/tabbar/activity_select.png"
+      },
+      {
+        "pagePath": "pages/share/home/home",
+        "text":"分享",
+        "iconPath": "images/tabbar/share.png",
+        "selectedIconPath": "images/tabbar/share_select.png"
+      },
+      {
+        "pagePath": "pages/game/home/home",
+        "text":"比赛",
+        "iconPath": "images/tabbar/game.png",
+        "selectedIconPath": "images/tabbar/game_select.png"
+      },
+      {
+        "pagePath": "pages/user/home/home",
+        "text":"我的",
+        "iconPath": "images/tabbar/user.png",
+        "selectedIconPath": "images/tabbar/user_select.png"
+      }
+    ]
+  }
+}

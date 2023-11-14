@@ -1,0 +1,21 @@
+/* pages/game/run/run.wxss */
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.item{
+    width: 30%;
+    margin-top: 10rpx;
+    margin-right: 2%;
+    margin-left: 1%;
+    text-align:center;
+    float: left;
+}
+.item:nth-child(3n+1){
+    margin-left: 2%;
+}
+.imgbox{
+    border-radius: 20rpx;
+    height: 325rpx;
+}

@@ -1,0 +1,10 @@
+/* pages/game/gym/gym.wxss */
+.but{
+    width: 150rpx;
+  }
+  .info{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }

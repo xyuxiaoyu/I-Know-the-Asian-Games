@@ -1,0 +1,51 @@
+/* pages/game/info/info.wxss */
+page{
+    background-color: rgb(255, 255, 255);
+}
+.box{
+    width: 100%;
+    position: relative;
+
+}
+
+.title{
+    font-size: 50rpx;
+    font-weight: bold;
+    padding-left: 18rpx;
+    /*margin-right: 10rpx;*/
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    padding-bottom: 15rpx;
+    border-bottom: 5rpx solid rgb(104, 13, 107);
+    text-align: left;
+    text-indent:1em;
+}
+
+.info{
+    text-align: left;
+    text-indent:2em;
+    margin-left: 20rpx;
+    margin-right: 10rpx;
+    margin-top: 20rpx;
+    font-size: medium;
+}
+
+.time{
+    margin-top: 10rpx;
+    margin-right: 20rpx;
+    right: 0;
+    position: absolute;
+    color: grey;
+}
+
+.urlcon{
+    margin-top: 50rpx;
+   
+}
+
+.see{
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    font-weight: normal;
+    color: gray;
+}

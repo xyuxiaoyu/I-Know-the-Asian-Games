@@ -1,0 +1,38 @@
+<!--pages/user/myshare/myshare.wxml-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">我的发布</view>
+</cu-custom>
+
+
+<scroll-view style="height: auto" scroll-y="true" scroll-with-animation="true">
+  <view class="items">
+    <block wx:for="{{list}}" wx:key>
+      <view class="item" bindtap="showModal" data-target="Modal" data-_id="{{item._id}}" data-index="{{index}}">
+        <view class="itembox cu-item">
+          <image class="imgbox" src="{{item.url}}" mode="aspectFill"></image>
+          <view class="title">{{item.title}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!--modal-->
+  <view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">我的发布</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <image src="{{modal.url}}" mode=""/>
+    <view class="modaltitle">{{modal.title}}</view>
+    <view class="like">
+      <text class="cuIcon-likefill text-red"></text>{{modal.num}}
+    </view>
+    
+  </view>
+</view>
+</scroll-view>

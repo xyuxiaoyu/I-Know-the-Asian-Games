@@ -1,0 +1,10 @@
+/* pages/user/form/form.wxss */
+.box{
+    margin-left: 60rpx;
+}
+.info{
+    text-align:left;
+    padding-left: 60rpx;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+}

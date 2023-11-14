@@ -1,0 +1,36 @@
+<!--pages/activity/star/star.wxml-->
+<!--<text>pages/activity/star/star.wxml</text>-->
+<!--标题-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">  
+  <view slot="backText"></view>
+  <view slot="content">亚运之星</view>
+</cu-custom>
+
+<!--分类导航-->
+<view class="cu-bar bg-white solid-bottom">
+  <view class="">
+    <button class="but" bindtap="scrollStepsback">上一位</button>
+  </view>
+  <view class="action">
+    <button class="but" bindtap="scrollStepsgo">下一位</button>
+  </view>
+</view>
+
+<scroll-view scroll-x class="bg-white padding response cu-steps steps-bottom" scroll-into-view="scroll-{{scroll}}" scroll-with-animation>
+  <view class="cu-item {{index>scroll?'':'text-pink'}} padding-lr-xl" wx:for="{{list}}" wx:key id="scroll-{{index}}">
+   {{item.name}}<text class="num" data-index="{{index + 1}}"></text>
+  </view>
+</scroll-view>
+
+<scroll-view style="height: 1200rpx" scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true">
+  <view class="cu-card" wx:for="{{list}}" >
+    <view class="cu-item" >
+      <image id="{{item.hash}}" class="pic" src="{{item.url}}" mode="aspectFill"></image>
+      <view class="content name"><text class="cuIcon-selectionfill text-yellow" style="padding-right: 20rpx;"></text>{{item.name}}</view>
+      <view class="title">个人简历</view>
+      <view class="content info" wx:for="{{item.person}}"><text>{{item}}</text></view>
+      <view class="title">亚运高光成绩</view>
+      <view class="content info" wx:for="{{item.highlight}}"><text>{{item}}</text></view>
+    </view>
+  </view>
+</scroll-view>
